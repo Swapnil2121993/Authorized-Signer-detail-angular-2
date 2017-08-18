@@ -1,0 +1,31 @@
+<h5><b>Contact Details</b></h5>
+<hr>
+<form (ngSubmit)="onClick()"#userForm="ngForm">
+<div class="form-group">
+    <label><input type="checkbox" value=" ">Passport</label>
+    <label><input type="checkbox" value="">Driver License</label> <br/>
+    <label><input type="checkbox" value="">Government Issued ID</label>
+    <label><input type="checkbox" value="">Company ID with Photo</label><br/>
+
+    <label for="id">ID Number*</label>
+    <input type="text" #inputID="ngModel" name="id" [(ngModel)]="user.id" required class="form-control"/>
+    <div *ngIf="inputID.errors && inputID.dirty" class="errors">
+    <p [hidden]="!inputID.errors.required">Number is required</p>
+    </div><br/>
+
+
+    <label for="date">Date Issued*</label>
+    <input type="date" #inputdate="ngModel" name="date"[(ngModel)]="user.date" required class="form-control"/>
+    <div *ngIf="inputdate.errors && inputdate.dirty" class="errors">
+    <p [hidden]="!inputdate.errors.required">Date is required</p>
+    </div><br/>
+
+    <label for="expiration_date">Expiration Date*</label>
+    <input type="date"#expiredate="ngModel" name="expiration_date" [(ngModel)]="user.expiration_date" required class="form-control"/>
+    <div *ngIf="expiredate.errors && expiredate.dirty" class="errors">
+    <p [hidden]="!exoiredate.errors.required">Expiration date is required</p>
+    </div><br/>
+
+<button type="submit" class="btn btn-primary" [disabled]="userForm.form.invalid">Complete Authorize Signer Details</button>
+</div>
+</form>

@@ -1,10 +1,27 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import {Router} from '@angular/router';
+
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  moduleId:module.id,
+  selector:'my-app',
+  template: `
+  <router-outlet></router-outlet>`,
 })
+
 export class AppComponent {
-  title = 'app';
+  states: any[];
+
+  constructor(private route:Router) {
+   }
+
+   user={};
+
+  
+  
+  onClick():void {
+    this.route.navigate(['detail']);
+  }
+
+  
 }

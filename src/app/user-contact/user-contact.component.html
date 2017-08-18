@@ -1,0 +1,27 @@
+<h5><b>Contact Details</b></h5>
+<hr>
+<form (ngSubmit)="onClick()" #userForm="ngForm">
+<div class="form-group">
+
+<label for="number">Main Telephone Number*</label>
+<input type="number" #inputNumber="ngModel" name="number" [(ngModel)]="user.number"required class="form-control"/><br/>
+<div *ngIf="inputNumber.errors && inputNumber.dirty" class="errors">
+<p [hidden]=!inputnumber.errors.required>Number is required</p>
+</div>
+
+<label for="cell_number">Cell Phone Number*</label>
+<input type="number" #cell="ngModel" name="cell_number" [(ngModel)]="user.cell_number" required class="form-control"/><br/>
+<div *ngIf="cell.errors && cell.dirty" class="errors">
+<p [hidden]=!cell.errors.required> Cell Number is required</p>
+</div>
+
+<label for="email">Business Email*</label>
+<input type="email" #email="ngModel" name="email" [(ngModel)]="user.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form-control" placeholder="abc@xyz.com"/>
+<div *ngIf="email.errors && email.dirty" class="errors">
+<p [hidden]=!email.errors.required>Email is required </p>
+<p [hidden]=!email.errors.pattern>Pattern is invalid </p>
+</div><br/>
+
+<button type="submit" class="btn btn-primary" [disabled]="userForm.form.invalid">Next</button>
+</div>
+</form>

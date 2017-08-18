@@ -1,0 +1,70 @@
+<h5><b>Authorized Signer Details </b></h5>
+<hr>
+<form (ngSubmit)="onClick()" #userForm="ngForm">
+  <div class="form-gropup row"> 
+    <label for="title">Title*</label>
+    <input #inputTitle="ngModel" type="text" name="title" [(ngModel)]="user.title" required class="form-control" />
+    <div *ngIf="inputTitle.errors && inputTitle.dirty" class="errors">
+    <p [hidden]="!inputTitle.errors.required">Title is required</p>
+    </div>
+
+    <label for="firstname">First Name*</label>
+    <input #inputFirstName="ngModel" type="text" name="firstname" [(ngModel)]="user.firstname" required class="form-control" /><br/>
+    <div *ngIf="inputFirstName.errors && inputFirstName.dirty" class="errors">
+    <p [hidden]="!inputFirstName.errors.required"> First name is required</p>
+    </div>
+
+    <label for="middlename">Middle Name*</label>
+    <input #inputMiddleName="ngModel" type="text" name="middlename" [(ngModel)]="user.middlename" required class="form-control" />
+    <div *ngIf="inputMiddleName.errors && inputMiddleName.dirty" class="errors">
+    <p [hidden]="!inputMiddleName.errors.required"> Middle name is required</p>
+    </div>
+
+    <label for="lastname">Last Name*</label>
+    <input #inputLastName="ngModel" type="text" name="lastname" [(ngModel)]="user.lastname" required class="form-control" />
+    <div *ngIf="inputLastName.errors && inputLastName.dirty" class="errors">
+    <p [hidden]="!inputLastName.errors.required"> Last name is required</p>
+    </div>
+
+    <label for="maidenname">Maiden Name(if applicable)</label>
+    <input type="text" name="maidenname" class="form-control"/>
+
+    <label for="ssn">Social Security Number/Tax Identification Number*</label>
+    <input #ssn="ngModel" type="text" name="ssn" [(ngModel)]="user.ssn" required class="form-control"/><br/>
+    <div *ngIf="ssn.errors && ssn.dirty" class="errors">
+    <p [hidden]="!ssn.errors.required">Social Security is required</p>
+    </div>
+  </div>
+
+  
+  <div class="form-gropup row"> 
+   <h5><b>Other Details </b></h5>
+   <hr>
+
+    <label for="country">Country of Citizenship</label>
+    <input #country="ngModel"type="text" name="country" [(ngModel)]="user.country" required class="form-control" /><br/>
+    <div *ngIf="country.errors && country.dirty" class="errors">
+    <p [hidden]="!country.errors.required">Country is required</p>
+    </div>
+
+    <label for="birth">Country of Birth</label>
+    <input #birth="ngModel" type="text" name="birth" [(ngModel)]="user.birth" required class="form-control" /><br/>
+    <div *ngIf="birth.errors && birth.dirty" class="errors">
+    <p [hidden]="!birth.errors.required">Country of Birth is required</p>
+    </div>
+
+    <label for="birthday">Date of Birth</label>
+    <input #birthdate="ngModel"type="date" name="birthdate"[(ngModel)]="user.birhtdate" required class="form-control" required/><br/>
+    <div *ngIf="birthdate.errors && birthdate.dirty" class="errors">
+    <p [hidden]="!birthdate.errors.required">Birthday is required</p>
+    </div>
+
+    <label for="gender" required>Gender</label><br/>
+    <label> <input type="radio" name="gender"/>Male</label>
+    <label> <input type="radio" name="gender"/>Female</label><br/>
+
+    <button type="submit" class="btn btn-primary" [disabled]="userForm.form.invalid">Next</button>
+
+   </div>
+
+</form>
