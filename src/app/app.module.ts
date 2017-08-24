@@ -42,16 +42,18 @@ import {
   StyleModule
 } from '@angular/material';
 import { AppComponent }  from './app.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
-import { UserAddressComponent } from './user-address/user-address.component';
-import { UserContactComponent } from './user-contact/user-contact.component';
-import { UserIdComponent } from './user-id/user-id.component';
-import { UserAgreementComponent } from './user-agreement/user-agreement.component';
+import {UserFormComponent} from '../user-form/user-form.component';
+import { UserDetailComponent } from '../user-detail/user-detail.component';
+import { UserAddressComponent } from '../user-address/user-address.component';
+import { UserContactComponent } from '../user-contact/user-contact.component';
+import { UserIdComponent } from '../user-id/user-id.component';
+import { UserAgreementComponent } from '../user-agreement/user-agreement.component';
+import { UserDataComponent } from '../user-data/user-data.component';
 
 
 const appRoutes:Routes = [
   
-    {path:'form1',component:AppComponent},
+    {path:'form1',component:UserFormComponent},
     {path: '',redirectTo:'form1',pathMatch:'full'},
     {path:'detail',component:UserDetailComponent},
     {path:'address',component:UserAddressComponent},
@@ -102,11 +104,13 @@ const appRoutes:Routes = [
   ],
   declarations: [
     AppComponent,
+    UserFormComponent,
     UserDetailComponent,
     UserAddressComponent,
     UserContactComponent,
     UserIdComponent,
-    UserAgreementComponent
+    UserAgreementComponent,
+    UserDataComponent
   ],
   bootstrap: [ AppComponent ]
 })

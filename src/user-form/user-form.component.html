@@ -1,0 +1,13 @@
+<h5><b>Authorized Signer</b></h5>
+<hr>
+<form (ngSubmit)="onClick()" #userForm="ngForm">
+<div class="form-group">
+<label for="signer">How many authorized signer ? *</label>
+<input type="number"#inputNumber="ngModel" name="signer" [(ngModel)]="user.signer" required class="form-control"/><br/>
+<div *ngIf="inputNumber.errors && inputNumber.dirty">
+    <p [hidden]=!inputNumber.errors.required>This field is required</p>
+</div>
+
+<button type="submit" class="btn btn-primary" [disabled]="userForm.form.invalid">Next</button>
+</div>
+</form>

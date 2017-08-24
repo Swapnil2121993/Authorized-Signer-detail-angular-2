@@ -5,8 +5,7 @@ import {Router} from '@angular/router';
 @Component({
   moduleId:module.id,
   selector:'my-app',
-  template: `
-  <router-outlet></router-outlet>`,
+  template:`<router-outlet></router-outlet>`,
 })
 
 export class AppComponent {
