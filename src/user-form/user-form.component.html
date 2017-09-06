@@ -3,8 +3,8 @@
 <form (ngSubmit)="onClick()" #userForm="ngForm">
 <div class="form-group">
 <label for="signer">How many authorized signer ? *</label>
-<input type="number"#inputNumber="ngModel" name="signer" [(ngModel)]="user.signer" required class="form-control"/><br/>
-<div *ngIf="inputNumber.errors && inputNumber.dirty">
+<input type="number"#inputNumber="ngModel" name="signer" required [(ngModel)]="user.signer" class="form-control"/><br/>
+<div *ngIf="inputNumber.errors && inputNumber.dirty" class="errors">
     <p [hidden]=!inputNumber.errors.required>This field is required</p>
 </div>
 

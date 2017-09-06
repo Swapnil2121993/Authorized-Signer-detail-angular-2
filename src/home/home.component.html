@@ -1,0 +1,11 @@
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+            <button md-button *ngIf="!loggedIn()" (click)="login()">Sign in</button>
+            <button md-button *ngIf="loggedIn()" (click)="logout()">Sign out</button>
+      </ul>
+    </div>
+      </nav>
+    
+      <h1>Welcome to Noble market</h1>

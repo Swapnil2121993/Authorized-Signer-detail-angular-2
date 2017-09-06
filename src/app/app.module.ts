@@ -49,12 +49,14 @@ import { UserContactComponent } from '../user-contact/user-contact.component';
 import { UserIdComponent } from '../user-id/user-id.component';
 import { UserAgreementComponent } from '../user-agreement/user-agreement.component';
 import { UserDataComponent } from '../user-data/user-data.component';
+import { HomeComponent } from '../home/home.component';
 
 
 const appRoutes:Routes = [
   
+    {path:'',component:HomeComponent},
     {path:'form1',component:UserFormComponent},
-    {path: '',redirectTo:'form1',pathMatch:'full'},
+    // {path: '',redirectTo:'form1',pathMatch:'full'},
     {path:'detail',component:UserDetailComponent},
     {path:'address',component:UserAddressComponent},
     {path:'contact',component:UserContactComponent},
@@ -110,7 +112,8 @@ const appRoutes:Routes = [
     UserContactComponent,
     UserIdComponent,
     UserAgreementComponent,
-    UserDataComponent
+    UserDataComponent,
+    HomeComponent,
   ],
   bootstrap: [ AppComponent ]
 })

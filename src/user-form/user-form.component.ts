@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, CanActivate} from '@angular/router';
+import {tokenNotExpired} from 'angular2-jwt';    
 
 @Component({
     moduleId:module.id,
